@@ -105,7 +105,7 @@ function generateTags(){
 
   /* find all articles */
     
-  const articles = document.querySelector(optArticleSelector);
+  const articles = document.querySelectorAll(optArticleSelector);
   console.log(articles);  
     
   /* START LOOP: for every article: */
@@ -206,7 +206,7 @@ function tagClickHandler(event){
   }
   /* execute function "generateTitleLinks" with article selector as argument */
     
-  generateTitleLinks('[data-tags="' + tag + '"]');  
+  generateTitleLinks('[data-tags~="' + tag + '"]');  
 
 }
 
@@ -239,7 +239,7 @@ function generateAuthors(){
   /* START LOOP: for every article: */
     
   for(let article of articles){
-      
+    
     /* find authors wrapper */
       
     const authorsWrapper = article.querySelector(optArticleTagsSelector);
