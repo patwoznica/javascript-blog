@@ -102,7 +102,10 @@ function generateTitleLinks(customSelector = ''){
 generateTitleLinks();
 
 function generateTags(){
-
+  
+  /* [NEW] create a new variable allTags with an empty array */
+  let allTags = {};  
+    
   /* find all articles */
     
   const articles = document.querySelectorAll(optArticleSelector);
@@ -143,17 +146,46 @@ function generateTags(){
         
       html = html + linkHTMLtag;
       console.log(linkHTMLtag);
+      
+      /* [NEW] check if this link is NOT already in allTags */
+      if(!allTags.hasOwnProperty(tag)){
+      /* [NEW] add generated code to allTags array */
+      allTags[tag] = 1;
+      } else {
+          allTags[tag]++;
+      }      
         
       /* END LOOP: for each tag */
     }
+  
     /* insert HTML of all the links into the tags wrapper */
         
     tagsWrapper.innerHTML = html;
         
     /* END LOOP: for every article: */
-    
-  }
 }
+    /* [NEW] find list of tags in right column */
+     const tagList = document.querySelector('.tags');
+
+    /* [NEW] create variable for all links html code */
+    
+    let allTagsHTML = '';
+    
+    /* [NEW] START LOOP: for each tag in allTags */
+    
+    for(let tag in allTags){
+        
+    /* [NEW] generate code of a link and add it to allTagsHTML */
+         allTagsHTML += tag + '(' + allTags[tag] + ')';
+    }
+    
+    /* [NEW] end loop for each tag in alltags */
+    /* [NEW] add html from allTags to tagList */
+    
+    tagList.innerHTML = allTagsHTML;
+    
+}
+
 
 generateTags();
 
@@ -233,7 +265,7 @@ addClickListenersToTags();
 function generateAuthors(){
 /* find all articles */
     
-  const articles = document.querySelector(optArticleSelector);
+  const articles = document.querySelectorAll(optArticleSelector);
   console.log(articles);  
     
   /* START LOOP: for every article: */
@@ -242,7 +274,7 @@ function generateAuthors(){
     
     /* find authors wrapper */
       
-    const authorsWrapper = article.querySelector(optArticleTagsSelector);
+    const authorsWrapper = article.querySelector(optArticleAuthorSelector);
     console.log(authorsWrapper);   
       
     /* make html variable with empty string */
