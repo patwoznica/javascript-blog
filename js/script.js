@@ -56,7 +56,7 @@ const optTagsListSelector = '.tags.list';
 const optCloudClassCount = 5;
 const optCloudClassPrefix = 'tag-size-';
 const optAuthorsListSelector = 'authors.list',
-  optAuthorClassCount = 5;
+      optAuthorClassCount = 5;
 const optAuthorClassPrefix = 'author-size-';
 
 function clearMessages(){
@@ -133,7 +133,9 @@ function calculateTagClass(count, params){
 }
 
 function generateTags(){
+	
   /* [NEW] create a new variable allTags with an empty object */
+	
   let allTags = {};
 
   /* find all articles */
@@ -311,6 +313,7 @@ function addClickListenersToTags(){
 }
 
 function calculateAuthorsParams(authors){
+	
   const params = {
     min: 999999,
     max: 0
