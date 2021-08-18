@@ -346,24 +346,24 @@ function generateAuthors(){
 	
   for(let article of articles) {
     /* find authors wrapper */
-	  
+
     const wrapperAuthors = article.querySelector(optArticleAuthorSelector);
     console.log(wrapperAuthors);
-	  
+
     /* make html variable with empty string */
-	  
+
     let html = '';
-	  
+
     /* get authors from post-author attribute */
-	  
+
     const author = article.getAttribute('post-author');
-	  
+
     /* insert HTML of all the links into the tags wrapper */
-	  
+
     const linkHTMLData = {id: author};
     const linkHTML = templates.articleAuthorLink(linkHTMLData);
 
-    if(!allAuthors.hasOwnProperty(author)){
+    if(!Object.prototype.hasOwnProperty.call('author')){
       allAuthors[author] = 1;
     } else {
       allAuthors[author]++;
@@ -386,7 +386,7 @@ function generateAuthors(){
 
   /* [NEW] add html from allAuthors to authorList */
 	
-  let allAuthorsHTML = '';
+  //let allAuthorsHTML = '';
   for(let author in allAuthors){
     allAuthorsData.authors.push({
       author: author,
