@@ -1,3 +1,4 @@
+
 'use strict';
 
 const templates = {
@@ -181,12 +182,14 @@ function generateTags(){
       /* [NEW] check if this link is NOT already in allTags */
 		
       //if(!allTags.hasOwnProperty(tag)){
-      if(!Object.prototype.hasOwnProperty.call('tag')){
+
+      if(!allTags[tag]){
         /* [NEW] add generated code to allTags object */
         allTags[tag] = 1;
       } else {
         allTags[tag]++;
       }
+
       /* END LOOP: for each tag */	
       console.log(html);
     }
@@ -363,7 +366,7 @@ function generateAuthors(){
     const linkHTMLData = {id: author};
     const linkHTML = templates.articleAuthorLink(linkHTMLData);
 
-    if(!Object.prototype.hasOwnProperty.call('author')){
+    if(!allAuthors[author]){
       allAuthors[author] = 1;
     } else {
       allAuthors[author]++;
