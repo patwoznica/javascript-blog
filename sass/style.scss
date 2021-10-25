@@ -64,6 +64,9 @@ body {
   border-radius: 5px;
 }
 
+.list li a:hover {     
+  font-weight: bold;    
+}
 /* Logo */
 
 .logo {
@@ -88,6 +91,7 @@ body {
 .list-horizontal {
   li {
     display: inline-block;
+	font-weight: bold;
   }
 }
 
@@ -99,6 +103,16 @@ body {
   }
 }
 
+.author-size-1 {
+  font-size: 15px;
+  color: darkred;
+}
+
+.author-size-5 {
+  font-size: 20px;
+  color: green;
+  font-weight: bold;
+}
 /* Post */
 
 .post {
@@ -110,6 +124,7 @@ body {
 
 .post-author {
   font-style: italic;
+  font-weight: bold;
 }
 
 .post-tags {
@@ -117,4 +132,34 @@ body {
   p {
     margin: 0 10px 0 0;
   }
+}
+
+/* Tag cloud */
+.tags li {
+  display: inline-block;
+  margin: 0 4px 0 4px;
+}
+.tag-size-1 {
+  font-size: 14px;
+  color: darkred;
+}
+.tag-size-2 {
+  font-size: 18px;
+  color: brown
+}
+
+.tag-size-3 {
+  font-size: 20px;
+  color: coral;
+}
+
+.tag-size-4 {
+  font-size: 24px;
+  color: darkolivegreen;
+}
+
+.tag-size-5 {
+  font-size: 28px;
+  color: green;
+  font-weight: bold;
 }
